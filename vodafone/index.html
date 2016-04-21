@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Vodofone - republic day  </title>
+        <link rel="stylesheet" href="css/style.css">
+        <noscript>
+        <style>
+            .step {
+                width: 100%;
+                position: relative;
+            }
+            .step:not(.active) {
+                opacity: 1;
+                filter: alpha(opacity=99);
+                -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
+            }
+            .step:not(.active) a.jms-link{
+                opacity: 1;
+                margin-top: 40px;
+            }
+        </style>
+        </noscript>
+
+    </head>
+    <body>
+        <div class="next_button"><a class="next"><img src="images/next.png"></a><a class="next1"><img src="images/next.png"></a><a class="next2"><img src="images/next.png"></a><a class="next3"><img src="images/next.png"></a><a class="replay" ><img src="images/replay.png"></a></div>
+        <!-- <div class="prev_button"><a class="prev"><img src="images/back.png"></a><a class="prev1"><img src="images/back.png"></a><a class="prev2"><img src="images/back.png"></a><a class="prev3"><img src="images/back.png"></a></div> -->
+        <div id="scene">
+            <div class="band"><img src="images/band.png"></div>
+            <img class="cloud sml" src="images/clouds.png" />
+            <img class="cloud med" src="images/clouds.png" width="100" height="52"/>
+            <img class="cloud lrg" src="images/clouds.png" width="130" height="67"/>
+            <div class="plane"></div>
+            <div class="sm-kint"><img src="images/kint.png"></div>
+            <div class="sm-kint2"><img src="images/kint2.png"></div>
+            <div id="lag-kint"><img src="images/lag_kint.png"></div>
+            <div id="lag-kint1" style="display:none;"><img src="images/kite2.png"></div>
+            <div id="lag-kint2" style="display:none;"><img src="images/lag_kite3.png"></div>
+            <div id="lag-kint3" style="display:none;"><img src="images/lag_kite4.png"></div>
+            <div id="lag-kint4" style="display:none;"><img src="images/lag_kite_4.png"></div>
+            <div class="house"> <img src="images/house.png"></div>
+            <div class="band"></div>
+
+        </div>
+        <script src="js/jquery-1.11.1.min.js" ></script>
+        <script>
+            $(function() {
+
+                $('.next').on("click", function() {
+                    $('#lag-kint').addClass('goTop');
+                    $('#lag-kint1').delay(800).fadeIn(400);
+                    $(this).hide()
+                    $('.next1').show();
+                    $('.prev').show();
+                });
+
+                $('.next1').on("click", function() {
+                    $('#lag-kint1').addClass('goTop');
+                    $('#lag-kint2').delay(800).fadeIn(400);
+                    $(this).hide()
+                    $('.next2').show();
+                    $('.prev').hide();
+                    $('.prev1').show();
+                });
+
+                $('.next2').on("click", function() {
+                    $('#lag-kint2').addClass('goTop');
+                    $('#lag-kint3').delay(800).fadeIn(400);
+                    $(this).hide()
+                    $('.next3').show();
+                    $('.prev1').hide();
+                    $('.prev2').show();
+                });
+
+                $('.next3').on("click", function() {
+                    $('#lag-kint3').addClass('goTop');
+                    $('#lag-kint4').delay(800).fadeIn(400);
+                    $(this).hide();
+                    $('.prev2').hide();
+                    $('.prev3').show();
+                     $('.replay').show();
+                });
+
+                $('.replay').on("click", function() {
+                    location.reload();
+                });
+            });
+        </script>
+    </body>
+</html>
